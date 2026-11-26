@@ -1,6 +1,6 @@
 # Spectral rigidity of finite swap configurations on spheres of revolution
 
-![Zenodo DOI for this paper pending](https://img.shields.io/badge/Zenodo_DOI-pending-lightgrey)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24558767.svg)](https://doi.org/10.5281/zenodo.24558767)
 
 **nunavipahe60-star**
 
