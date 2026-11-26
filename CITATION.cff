@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "Please use this metadata when citing the repository. The accompanying paper identifies nunavipahe60-star as its author."
+title: "Spectral rigidity of finite swap configurations on spheres of revolution"
+authors:
+  - name: "nunavipahe60-star"
+  - name: "Claude"
+  - name: "Gemini"
+  - name: "Codex"
+license: Apache-2.0
+keywords:
+  - inverse spectral geometry
+  - spheres of revolution
+  - equivariant Laplace spectrum
+references:
+  - type: report
+    authors:
+      - name: "nunavipahe60-star"
+    title: "Swap pairs on spheres of revolution: what the equivariant spectrum sees"
+    doi: "10.5281/zenodo.24531890"

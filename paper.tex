@@ -1,0 +1,1161 @@
+% Self-contained source. Compile twice with pdfLaTeX.
+\documentclass[11pt,letterpaper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,microtype}
+\usepackage[margin=1.03in,headheight=14pt,headsep=16pt]{geometry}
+\usepackage{fancyhdr,needspace}
+\usepackage[hidelinks,pdfencoding=auto]{hyperref}
+\hypersetup{pdftitle={Spectral rigidity of finite swap configurations on spheres of revolution},pdfauthor={nunavipahe60-star},pdfsubject={Finite swaps and inverse-branch recovery for spheres of revolution}}
+\title{Spectral rigidity of finite swap configurations\\on spheres of revolution}
+\author{nunavipahe60-star}
+\date{}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small\textit{Spectral rigidity of finite swap configurations on spheres of revolution}}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt plus 0.8pt minus 0.7pt}
+\setlength{\emergencystretch}{2em}
+\raggedbottom
+\allowdisplaybreaks[1]
+\begin{document}
+\maketitle
+\begin{abstract}
+We study the placement of finitely many fixed, separated bumps on a sphere of
+revolution with an even background profile strictly increasing on the northern
+half. If each bump has fixed signs near its support edges, a single ray of
+shifted resolvent traces determines every hemisphere assignment up to
+simultaneous reflection at each sufficiently large angular weight. For three
+nonnegative bumps the ordinary Laplace spectrum with multiplicities
+determines the placement, including the case of equal latitude gaps. For
+smooth single wells the labelled high-weight spectra recover the unordered
+inverse slopes and determine their branch assignments under a finite
+separated-band hypothesis. For signed bumps oscillating up to their edges,
+a sharp root limsup for the ray determinant distinguishes placements along
+an unbounded sequence of integer weights.
+\end{abstract}
+
+\section*{Introduction}
+Reflecting an individual bump across the equator can preserve the unordered
+inverse slopes of a single well at every regular height. The three-bump
+equivariant rigidity theorem in \cite[Corollary~10.3]{original}
+uses meridian and Mercator lengths to distinguish such placements. The
+earlier paper is archived on Zenodo under
+\href{https://doi.org/10.5281/zenodo.24531890}{doi:10.5281/zenodo.24531890}.
+Here a continuous family of lengths, obtained by varying the shift along
+high-weight spectral rays, separates all boundary gaps in a finite
+configuration. For nonnegative bumps, summation over angular weights
+distinguishes configurations by the ordinary spectrum even when exactly
+two boundary gaps share the shortest latitude length.
+
+\paragraph{Geometric hypotheses.}
+The rotation has period \(2\pi\) and the sphere has area \(4\pi\).
+The metric is \(g_v=v\,dx^2+v^{-1}d\theta^2\), with \(v>0\) and
+\(v-(1-x^2)^{-1}\) smooth on the closed area interval. The background
+\(e_0\) is even and strictly increasing on \(0<x<1\).
+An admissible perturbation retains smooth poles and a positive profile.
+When asserting a result in the positively curved single-well class, restrict
+to profiles with a nondegenerate minimum, nonzero derivative away from it
+on each open half, and \(-(1/v)''/2>0\). The transmission argument below
+uses fewer hypotheses than these geometric restrictions.
+
+For a fixed additive family, bump \(i\) has a prescribed shape, amplitude
+and northern support hull, and can be reflected to the south. Hulls are
+compact interior intervals with positive gaps between consecutive hulls.
+All gap endpoints in the statements are actual support edges.
+Determination in this setting means injectivity of the map from these
+placements modulo reflection to the specified spectral data.
+
+\Needspace{7\baselineskip}\section{A mixed variation at a nonzero weight}
+
+Use the area coordinate \(x\in(-1,1)\) and area measure \(dx\). Fix an
+integer \(M=|m|\geq 1\) and write
+\[
+ L=-\partial_x(v^{-1}\partial_x)+M^2v,\qquad
+ R_z=(L+z)^{-1},\qquad \Psi_M(v,z)=\operatorname{Tr}R_z .
+\]
+The realization is the regular sector realization at the two poles.
+Throughout the variation \(v=e+sP+tQ\), where \(e\) is even, \(P,Q\)
+are smooth, odd and compactly supported, their supports have positive
+separation, and \(v>0\) for \(-1\leq s,t\leq1\). The endpoints satisfy the
+smooth-pole normalization in the introduction. The kernel of \(R_z\)
+relative to \(dx\) is \(G\), and that of \(R_z^2\) is \(H=-\partial_zG\).
+
+\paragraph{The exact Hessian.}
+For a perturbation \(h\), the first variation \(A_h\) of \(L\) and
+its real bilinear form satisfy
+\[
+ A_h=\partial_x(v^{-2}h\partial_x)+M^2h,\qquad
+ \langle A_h f,g\rangle=
+ \int h\big(M^2fg-v^{-2}f'g'\big)\,dx .
+\]
+The mixed variation of \(L\) is
+\(-\partial_x(2v^{-3}PQ\partial_x)=0\).
+For real symmetric kernels \(U,V\) define, away from \(x=y\),
+\begin{align*}
+ {\cal B}(U,V)(x,y)
+  ={}&M^4 UV-M^2 v(x)^{-2}U_xV_x-M^2 v(y)^{-2}U_yV_y\\
+     &+v(x)^{-2}v(y)^{-2}U_{xy}V_{xy}.
+\end{align*}
+At fixed \(z\) the trace Hessian is
+\begin{align*}
+ \partial_s\partial_t\Psi_M(v,z)
+  &=2\iint P(x)Q(y){\cal B}(G,H)(x,y)\,dx\,dy\\
+  &=-\iint P(x)Q(y)\,\partial_z D_M(x,y;z)\,dx\,dy,\qquad
+ D_M={\cal B}(G,G).
+\end{align*}
+Indeed, the two terms in the Hessian of \(R_z\) are
+\(R_z A_P R_z A_Q R_z\) and its adjoint. Closing the two exterior
+resolvents in each trace gives \(R_z^2\) and applying the two bilinear
+forms gives the four displayed products. The common closed form domain
+is fixed because the perturbations are supported in the interior.
+\(R_z^{1/2} A_h R_z^{1/2}\) is bounded as a form and \(R_z^{1/2}\) is
+Hilbert--Schmidt, since \(\operatorname{Tr}R_z\leq1/M\).
+These bounds justify the resolvent derivatives in trace norm. For the
+kernel calculation one can first smooth the value and derivative
+evaluations in the two bilinear forms on disjoint neighborhoods of
+their supports. The resulting bounded form operators converge strongly
+after sandwiching by \(R_z^{1/2}\), with uniform bounds, so their traces
+converge after sandwiching again by the Hilbert--Schmidt factors.
+On the two disjoint neighborhoods the Green kernels and all the
+displayed derivatives converge under smoothing in the usual pointwise
+kernel formula. Thus the jump on the diagonal supplies no term.
+The form calculation has no pole boundary terms.
+
+\paragraph{The relative determinant.}
+Set \(F_M(v,z)=\log\det(I+zL^{-1})\). Then \(\partial_zF_M=\Psi_M\).
+At \(z=0\) the explicit kernel in \cite[Lemma~9.1]{original} is
+\((2M)^{-1}\exp(-M|\int_x^y v|)\). Direct substitution gives
+\(D_M(x,y;0)=0\) off the diagonal. Consequently integration in \(z\)
+gives the simpler exact formula
+\[
+ \partial_s\partial_t F_M(v,z)
+    =-\iint P(x)Q(y)D_M(x,y;z)\,dx\,dy .
+\]
+This normalization removes the zero-shift contribution to the mixed
+variation exactly.
+
+\Needspace{7\baselineskip}\section{Uniform transmission on a fixed ray}
+
+Put \(u=z/M^2\), \(d\tau=v\,dx\), and \(w(\tau)=1/v(x(\tau))\).
+At fixed \(s,t\), \(\tau(0)=0\) and the two poles are at
+\(\tau=\pm\infty\). Multiplication of the Green equation by \(1/v\)
+gives the full-line equation
+\[
+  (-\partial_\tau^2+M^2(1+uw))G(\tau,\eta)=\delta_\eta .
+\]
+The resulting kernel with respect to the full-line Schrödinger equation
+is precisely the area-measure kernel above. This change of variable is
+made \emph{after} the variations in \(s,t\) have been computed.
+
+Write \(a=\sqrt{1+uw}\) and let \(U_-,U_+\) be the positive
+solutions decaying at the left and right ends, respectively. Put
+\[
+ h_-=\frac{\partial_\tau\log U_-}{M},\qquad
+ h_+=-\frac{\partial_\tau\log U_+}{M}.
+\]
+For \(x<y\) put \(\tau_x=\tau(x)\), \(\tau_y=\tau(y)\).
+The Wronskian formula and its off-diagonal derivatives give
+\begin{align*}
+ G(x,y)&=
+ \frac{\exp(-M\int_{\tau_x}^{\tau_y}h_+\,d\tau)}
+ {M(h_-+h_+)(\tau_x)},\\
+ D_M(x,y;z)&=M^4G(x,y)^2
+       \big(1-h_-(\tau_x)^2\big)\big(1-h_+(\tau_y)^2\big).
+\end{align*}
+For \(y<x\) interchange \(x,y\) in these formulas.
+For \(z>0\) the sign of each factor is in fact strict at every \(M\).
+For example
+\((e^{M\tau}(U_-'-MU_-))'=z w e^{M\tau}U_->0\),
+where the prime denotes a \(\tau\) derivative and the bracketed
+expression times \(e^{M\tau}\) tends to zero at the left pole.
+Thus \(h_->1\); reversing \(\tau\) gives \(h_+>1\).
+
+\paragraph{Riccati bounds.}
+In the direction from its own pole into the line, each \(h\) solves
+\(h'=M(a^2-h^2)\) and tends to 1 at that pole. Comparison gives
+\(1\leq h\leq\sup a\). The functions \(w,w'\) are uniformly bounded
+on the line for the whole parameter square, by compact support of the
+variations and the smooth pole expansions. For \(u\) in a compact
+subinterval of \((0,\infty)\), uniformly on the line and parameter square,
+\[
+ h=a+O(M^{-1}),\qquad
+ j:=\partial_u h=\frac{w}{2a}+O(M^{-1}).
+\]
+For the first bound, \(h-a\) solves a first-order equation with
+damping \(M(h+a)\geq 2M\) and bounded forcing \(-a'\).
+For the second bound, the bounded solution of
+\(j'+2Mhj=Mw\) is the parameter derivative. Indeed the difference
+quotient at \(u,u+\epsilon\) has the same equation with damping
+\(M(h(u)+h(u+\epsilon))\), and its integral from the relevant pole
+converges to the indicated bounded solution by dominated convergence.
+Subtracting \(w/(2a)\) leaves damping at least \(2M\) and bounded
+forcing, by the first estimate and the bound on \((w/a)'\).
+All derivatives in this argument use the specified direction from the pole.
+
+\paragraph{Transmission and the sign of the trace density.}
+Fix \(c>0\) and set \(u=c^2\). For the compact hull of the supports and the
+parameter square, \(\tau\)-lengths are bounded and \(w\) is bounded
+away from zero. Define
+\[
+ d_v(x,y)=\left|\int_x^y\sqrt{v^2+c^2v}\,dx\right| .
+\]
+The amplitude factors \(1-h_\pm^2=-uw+O(M^{-1})\) are strictly
+negative there for large \(M\). In particular the cancellation at
+\(c=0\) leaves precisely \(-c^2 M^2/v\) to leading order in each
+unscaled factor. The first bound on \(h\) gives
+\[
+ G(x,y)\asymp M^{-1}e^{-M d_v(x,y)},\qquad
+ D_M(x,y;c^2M^2)\asymp M^2e^{-2M d_v(x,y)} .
+\]
+Here and below constants can depend on the fixed ray and supports.
+The logarithmic derivative of each amplitude factor and that of
+\((h_-+h_+)(\tau_x)\) are bounded on this compact set. The derivative
+of the propagation exponential gives, uniformly for \(x<y\),
+\[
+ \partial_u\log D_M(x,y;uM^2)
+   =-M\int_{\tau_x}^{\tau_y}\frac{w}{a}\,d\tau+O(1).
+\]
+Between the separated supports the integral is bounded above and below
+by positive constants. Since \(\partial_z=M^{-2}\partial_u\), this proves
+\[
+ -\partial_zD_M(x,y;c^2M^2)\asymp
+          M e^{-2M d_v(x,y)} .
+\]
+In particular the density in the trace Hessian has a fixed positive
+sign on \(\operatorname{supp}P\times\operatorname{supp}Q\) for large \(M\).
+The optical coordinate \(d\zeta_c=\sqrt{v^2+c^2v}\,dx\) is recovered
+with its exact rate, including the derivative in the spectral parameter.
+
+\Needspace{7\baselineskip}\section{Finite configurations on a symmetric background}
+
+Let \(e_0>0\) be an even smooth sphere profile, strictly increasing
+on the northern half. Start with a fixed finite collection of smooth,
+nonzero northern bumps, including their specified amplitudes and
+positions. Their support hulls are compactly contained in \((0,1)\)
+and separated by positive gaps. Each bump is placed either as given
+or after reflection in the equator. Assume the profiles are admissible.
+In the one-signed case each individual bump has either sign everywhere,
+with signs allowed to vary from bump to bump. Write \(v_\sigma\) for
+the resulting configuration with placement vector \(\sigma\).
+
+\paragraph{Finite-configuration theorem.}
+For any two placements \(\gamma\ne\pm\sigma\), let a boundary gap be
+a gap across which \(\gamma_i\sigma_i\) changes value. Write
+\[
+ d_c(I)=\int_I\sqrt{e_0^2+c^2e_0}\,dx .
+\]
+If the shortest boundary gap for \(c>0\) is unique and its two facing
+bump edges are of fixed sign in some one-sided neighborhoods, the
+following limits hold for \(S_M=\Psi_M(\,\cdot\,,c^2M^2)\) and for
+\(S_M=F_M(\,\cdot\,,c^2M^2)\):
+\[
+ \lim_{M\to\infty}-\frac{\log|S_M(v_\sigma)-S_M(v_\gamma)|}{2M}
+     =\min_{I\ {\rm boundary}} d_c(I).
+\]
+The interpolating family is assumed positive. For admissible
+placement profiles this follows automatically because at any one
+point only one bump can vary and its coefficient is between the
+two endpoint coefficients. For every finite family of individually
+one-signed bumps, some \(c>0\) works simultaneously for all placement
+comparisons, and all sufficiently large individual weights distinguish
+every placement up to overall reflection. The theorem also applies
+when every bump has fixed signs near its two support edges while
+changing sign in its interior.
+
+\paragraph{Proof.}
+Use the common even part and put in \(P\) the signed odd parts of the
+unchanged bumps and in \(Q\) the signed odd parts of the switched
+bumps, so the two profiles are \(e+P+Q\) and \(e+P-Q\).
+Reflection shows that twice the corner difference is the integral of
+the mixed Hessian over the parameter square. Its spatial integrals
+split into finitely many pairs of one unchanged and one switched
+bump, each on either hemisphere. Every profile equals \(e_0\) on each
+gap. A same-hemisphere interval between two different groups spans
+a boundary gap. Unless it joins the two neighbors of the minimizing
+gap, it either spans a larger boundary gap or traverses an additional
+interval of strictly positive optical length. A cross-equator interval
+between different groups traverses a boundary gap between their
+absolute support positions and an additional interval through the
+equator. Uniform positivity of the optical density on the compact
+hull and finiteness give a positive excess length for all these
+competitors. This argument also covers negative bumps.
+
+Write \(d\) for the unique minimum. For the two minimizing pairs
+(one per hemisphere), the product \(P(x)Q(y)\) has the same sign
+at the facing edges, since reflection changes both individual signs.
+If a bump changes sign in its interior, discard the complement of
+the two fixed-sign edge neighborhoods at an exponential cost, again
+by the positive excess length. The remaining mass is bounded above
+by a polynomial in \(M\) times \(e^{-2Md}\). For every \(\eta>0\)
+choose fixed subintervals just inside the actual facing support edges
+where both absolute bump values have positive lower bounds. They
+can be chosen so close to the edges that the optical length between
+any two of their points is at most \(d+\eta\), uniformly in \(s,t\).
+The two-sided kernel estimates give a lower bound by a positive
+constant times \(M e^{-2M(d+\eta)}\) for the trace mass, or
+\(M^2e^{-2M(d+\eta)}\) for the determinant mass.
+Taking \(\eta\) smaller than the excess length proves eventual
+noncancellation. Sending \(\eta\) to zero gives the two limits.
+This estimate accommodates bumps flat to infinite order at their edges.
+
+For two different parameters \(c,c'\) the ratio of their densities is
+\(\sqrt{(e_0+c^2)/(e_0+c'^2)}\), strictly monotone on the northern
+half. Its weighted averages over two ordered gaps are strictly ordered.
+Thus a given pair of gaps ties at at most one \(c\geq0\), as in
+\cite[Proposition~10.4]{original}. Finitely many gaps exclude only
+finitely many rays. Finally there are finitely many placement comparisons,
+so their sufficiently-large-weight thresholds have a common upper bound.
+
+\Needspace{7\baselineskip}\section{The ordinary spectrum of a three-bump sandwich}
+
+\paragraph{Theorem.}
+Let \(B<A<D\) be the three nonzero, nonnegative bumps of
+\cite[Section~5]{original}, with positive amplitudes and positively separated
+support hulls compactly contained in \((0,1)\). Keep \(B,D\) in opposite
+hemispheres and interchange the two placements of \(A\).
+The ordinary Laplace spectra, including multiplicities, differ even if
+the two facing latitude gaps have equal length. The assertion also
+holds over a smooth, even, admissible background \(v_b\) that is
+strictly increasing on \((0,1)\). Here latitude length means
+\(\int_I\sqrt{v_b}\,dx\). All sectors use the regular realizations
+at the smooth poles.
+Only the ordinary eigenvalues with their multiplicities enter the two
+spectral tests below. The sector decomposition evaluates the second test
+by summation over all weights.
+
+\paragraph{Two quantities available from the ordinary spectrum.}
+Write \(k>0\) and \(m\geq0\). In the zero sector omit the constant
+eigenfunction and use the same convention for the full Laplacian
+\(\Delta\). Set \(F_m(k)=\sum_j\log(1+k^2/\lambda_{m,j})\), and let
+\(\delta\) denote the difference between the two arrangements. The ordinary
+multiplicity of an eigenvalue is odd precisely when it belongs to the
+simple zero sector, since every \(m>0\) contributes together with \(-m\).
+Thus ordinary isospectrality implies \(\delta F_0(k)=0\) for every \(k\).
+It also implies equality of the ordinary spectral statistic
+\[
+ \sum_{\lambda>0}
+ \left[\log(1+k^2/\lambda)-k^2/\lambda\right],
+\]
+with multiplicities. For each metric this second regularized spectral sum
+converges absolutely by the two-dimensional Weyl law. The difference of
+the two regularized sums consequently converges absolutely as a double
+series in \((m,j)\), so we may sum over \(j\) at each fixed \(m\).
+For \(m\geq1\) both arrangements have first inverse trace \(1/m\);
+at \(m=0\) they have the same
+\(T_1=\tfrac12\int_{-1}^1(1-x^2)v(x)\,dx\), since the weight is even.
+The subtractions \(-k^2/\lambda_{m,j}\) therefore cancel exactly after
+summation within each sector. Counting the two signs of each nonzero
+weight, ordinary isospectrality requires
+\[
+ \delta F_0(k)=0,\qquad
+ \delta F_0(k)+2\sum_{m=1}^{\infty}\delta F_m(k)=0.
+ \tag{O1}
+\]
+
+\paragraph{The kernel in a sector.}
+Use the interpolation \(v=e+sP+tQ\), \(-1\leq s,t\leq 1\), with \(P\)
+the fixed odd part of \(B,D\) and \(Q\) the odd part of \(A\), including
+the amplitudes. Then \(v\geq v_b\), and \(v=v_b\) on each gap and its
+reflection. For \(x<y\) let \(H_m(x,y)\) be the kernel in the mixed
+variation \(\partial_s\partial_t F_m=-\iint P(x)Q(y)H_m(x,y)\,dx\,dy\);
+extend by symmetry. For \(m>0\), let \(u_-,u_+\) be the positive
+left-regular and right-regular solutions of
+\(- (pu')'+(m^2v+k^2)u=0\), \(p=1/v\), and write \(G_m\)
+for its Green kernel. The disjoint-support mixed determinant formula gives
+\[
+ H_m(x,y)=G_m(x,y)^2
+ \left[m^2-\left(\frac{pu_-'}{u_-}(x)\right)^2\right]
+ \left[m^2-\left(\frac{pu_+'}{u_+}(y)\right)^2\right].
+ \tag{O2}
+\]
+Indeed the form insertion at each end is \(m^2u^2-p^2(u')^2\).
+The subtracted kernel at \(k=0\) vanishes since its regular solutions
+have flux logarithmic derivatives \(m\) and \(-m\). For \(m=0\),
+Lemma~8.1 of \cite{original} gives the positive kernel
+\[
+ H_0(x,y)=k^4 G_D(x,y)^2,\qquad
+ G_D=(-\partial_x^2+k^2v)^{-1}_{\rm Dirichlet}.
+\]
+Reflection in \(x\) identifies opposite interpolation corners, so
+\(2\delta F_m\) is the integral of the mixed variation over the square.
+
+\paragraph{Compact uniform estimates including the prefactor.}
+Fix a compact interval containing both hemispheres' supports in its
+interior, and take a slightly larger interval compactly contained in
+\((-1,1)\). For \(m\geq1\) put
+\[
+ T=k+m,\quad h_m=(k^2v+m^2v^2)^{1/2},\quad \rho_m=p h_m .
+\]
+With \(d\eta=h_m\,dx/T\) and \(w=(\rho_m/T)^{1/2}u\), the equation becomes
+\(w_{\eta\eta}=(T^2+V)w\), where
+\(V=((\rho_m/T)^{1/2})_{\eta\eta}/(\rho_m/T)^{1/2}\).
+On the larger interval \(h_m/T\) and \(\rho_m/T\) are bounded above and
+below by positive constants with uniform derivative bounds through order
+two. All bounds are uniform in \(s,t,m\), for \(k\geq1\).
+The regular left solution is positive and increasing, and the right one
+is positive and decreasing. This follows from their regular pole
+behavior and \((pu')'=(m^2v+k^2)u\). Hence \(w_\eta/w\geq-C\)
+at the left end for \(u_-\), and \(w_\eta/w\leq C\) at the right end
+for \(u_+\). Riccati comparison for \(r'=T^2+V-r^2\) with constant
+potentials \(T^2\pm\|V\|_\infty\) gives
+\[
+ (\log w_-)_\eta=T+O(T^{-1}),\qquad
+ (\log w_+)_\eta=-T+O(T^{-1})
+\]
+on the inner interval. For example the upper comparison for the first
+bound starts at \(+\infty\) and is a hyperbolic cotangent; the lower one
+starts at \(-C\) and is a shifted hyperbolic tangent. The inner interval
+has uniformly positive \(\eta\)-distance from the outer endpoints.
+Integration and the Green Wronskian formula now give, uniformly for
+points \(x<y\) in the inner interval,
+\[
+ G_m(x,y)=
+ \frac{\exp[-\int_x^y h_m\,dx]}{2\sqrt{\rho_m(x)\rho_m(y)}}
+ (1+O(T^{-1})),\qquad
+ \frac{pu_\mp'}{u_\mp}=\pm\rho_m+O(1).
+ \tag{O3}
+\]
+The last signs refer respectively to the left and right solutions.
+The same comparison for the Dirichlet string (\(p=1\),
+\(h=k\sqrt v\)) gives
+\[
+ H_0(x,y)=
+ \frac{k^2}{4\sqrt{v(x)v(y)}}\exp[-2k\!\int_x^y\!\sqrt v\,dx]
+ (1+O(k^{-1})).
+ \tag{O4}
+\]
+These estimates require no asymptotic approximation at a pole.
+
+\paragraph{Summation over angular weights.}
+On the support rectangles in the mixed integral, \(y-x\) is bounded
+below by a positive constant after ordering \(x,y\). Define
+\(b(x,y)=\int_x^y v^{3/2}\,dx\) for that ordering. Both \(b\) and
+\(1/b\) are bounded there. For fixed \(R\), Taylor expansion in (O3)
+for \(1\leq m\leq R\sqrt k\) gives
+\[
+ 2\int_x^y h_m\,dx=2k\int_x^y\sqrt v\,dx+
+     \frac{m^2}{k}b(x,y)+O_R(k^{-1}).
+\]
+Each vertex in (O2) is \(-k^2/v+O_R(k)\) in this range, and hence
+\[
+ H_m/H_0=(1+O_R(k^{-1}))\exp[-m^2 b(x,y)/k].
+ \tag{O5}
+\]
+For all \(m\), (O2)--(O4) bound the absolute value of this ratio by
+\[
+ C(1+m/k)^2\exp[-c\min(m^2/k,m)].
+ \tag{O6}
+\]
+Indeed \(|m^2-(pu'/u)^2|\leq C(k+m)^2\), and
+\(h_m-k\sqrt v=m^2v^2/(h_m+k\sqrt v)\) on \([x,y]\), whose
+length is uniformly bounded below on these separated rectangles.
+Thus the tail above \(R\sqrt k\), divided by \(\sqrt k\), is bounded
+by a Gaussian tail tending to zero as \(R\to\infty\), plus \(o(1)\).
+Uniform Riemann summation in (O5) proves the pointwise relative estimate
+\[
+ \frac{H_0+2\sum_{m\geq1}H_m}{\sqrt k\,H_0}
+      =\sqrt{\pi/b(x,y)}+o(1).
+ \tag{O7}
+\]
+All errors here are uniform on the support rectangles and interpolation
+square. In particular (O6) justifies interchange with their integrals.
+
+\paragraph{Isolation at the two facing gaps.}
+For \(I=I_{BA}\) or \(I_{AD}\), let \(A_I(k)>0\) be the integral of
+\(|P(x)Q(y)|H_0(x,y)\) over the parameter square and the two
+same-hemisphere support rectangles associated with \(I\). Set
+\(d_I=\int_I\sqrt{v_b}\,dx\) and \(b_I=\int_I v_b^{3/2}\,dx\).
+By (O4), \(A_I=\exp[-2k d_I+o(k)]\). For the upper bound use
+\(v\geq v_b\); for the lower bound choose positive subintervals in
+the bumps arbitrarily near the facing edges, where the action approaches
+\(d_I\) uniformly in \(s,t\). After division by \(A_I\), the positive
+integrating measure concentrates arbitrarily close to the facing edges,
+since the complement of each fixed edge neighborhood has background
+latitude separation at least \(d_I+\delta\) for some \(\delta>0\).
+There \(b(x,y)\) approaches \(b_I\) uniformly as the neighborhoods shrink.
+By (O7), replacing \(H_0\) by its sum over all weights replaces
+\(A_I\) by
+\[
+ \sqrt{\pi k}\,A_I\,(b_I^{-1/2}+o(1)).
+ \tag{O8}
+\]
+Opposite-hemisphere terms have a strictly larger latitude separation
+than the corresponding gap. In the tied case these terms are exponentially
+smaller than either \(A_I\), both before summation and after allowing the
+factor \(O(\sqrt k)\) in (O7).
+
+Write \(d_{BA}=d_{AD}=d\). The same-hemisphere contributions have
+opposite signs for the two gaps, and the north and south contributions
+for each gap have the same sign. Thus the first requirement in (O1)
+implies \(A_{BA}/A_{AD}\to1\). By (O8), the second requirement then
+implies \(b_{BA}^{-1/2}=b_{AD}^{-1/2}\). But \(b_I/d\) is the average
+of \(v_b\) on \(I\) with weight \(\sqrt{v_b}\,dx\).
+Strict increase and \(I_{BA}<I_{AD}\) give \(b_{BA}<b_{AD}\), a
+contradiction. If the latitude gaps differ, the zero sector already
+distinguishes the pair by the shortest-gap argument. The ordinary
+contrast just proved comes from a Gaussian sum over weights of order
+\(\sqrt k\). It yields separation of the specified arrangements without
+requiring recovery of a separately labeled Mercator gap.
+
+\paragraph{Corollary.}
+In a finite family of nonnegative bumps an ordinary spectrum distinguishes
+two placements whenever at most two boundary gaps share the smallest
+latitude length. All nonminimizing rectangles have a fixed positive excess.
+With a single winner its zero-sector mass dominates. With two winners,
+like signs add in the zero sector. For opposite signs, the preceding proof
+applies verbatim to those two masses, since their \(b_I/d_I\) values are
+strictly ordered. In particular every three-bump placement is determined
+by its ordinary Laplace spectrum up to reflection.
+
+\Needspace{7\baselineskip}\section{A finite theorem in inverse-branch coordinates}
+
+Fix common inverse data \(W,|a'|\) for the finite separation theorem
+in this section. Appendix~\ref{app:inverse} independently recovers
+these data from the labelled high-weight spectra and states the resulting
+rigidity corollary. The midpoint of a sublevel interval can drift between
+active height ranges. The transmission calculation in these coordinates
+has a vanishing principal variation.
+
+\paragraph{Coordinates and hypotheses.}
+For a level $s$ put $u=W(s)/2$, let $V(u)=s$ be its inverse, and write $b(u)=a(V(u))$. The northern and southern inverse branches in the area coordinate are $b(u)+u$ and $b(u)-u$. Use a signed coordinate $y\in(-1,1)$, with $u=|y|$, so that
+\[
+ x(y)=y+b(|y|),\qquad
+ \rho(y)=\frac{dx}{dy}=1+\operatorname{sgn}(y)b'(|y|),\qquad
+ v(x(y))=V(|y|).
+\]
+In particular, $|b'(u)|=|a'(V(u))|V'(u)$ is determined by the data. The endpoint normalization is $b(1)=0$. If the minimum is prescribed at $x=0$, one must also impose $b(0)=0$, equivalently $\int_0^1 b'(u)\,du=0$.
+
+Suppose $V$ extends evenly and smoothly across $0$, has a nondegenerate minimum there, has $V'(u)>0$ on $(0,1)$, and has smooth sphere pole behavior, namely $V(u)-(1-u^2)^{-1}$ extends smoothly to $1$. Assume the nonzero set of $|b'|$ consists of finitely many intervals whose closures are contained in $(0,1)$ and are separated by positive gaps. Suppose that on each interval $|b'|$ extends by zero to a smooth function $H_j$ on $(0,1)$, and that $\sup |b'|<1$. Number the intervals from left to right. Every smooth branch assignment in this class has
+\[
+ b'_\sigma=\sum_j \sigma_j H_j,\qquad \sigma_j\in\{-1,1\},
+\]
+with $b_\sigma(1)=0$ determining its constant. Retain only assignments satisfying any prescribed centering and curvature conditions.
+
+\paragraph{Theorem.}
+The labelled high-weight spectra determine the assignment up to simultaneous reversal in this class. Compare two assignments $\sigma,\gamma$ with both a fixed and a switched sign. A boundary gap lies between successive intervals with opposite values of $\sigma_j\gamma_j$. For $c>0$ let
+\[
+ d_c(I)=\int_I \sqrt{V(u)^2+c^2V(u)}\,du.
+\]
+If the shortest boundary gap is unique, and $D_{M,c}(\sigma)=\log\det(I+c^2M^2 L_M(\sigma)^{-1})$, then
+\[
+ \lim_{M\to\infty}-\frac{1}{2M}
+ \log |D_{M,c}(\sigma)-D_{M,c}(\gamma)|
+ =\min_{I\ {\rm boundary}} d_c(I).
+\]
+Here $M$ may run through the positive integers. Since $V$ is strictly increasing, the ratio of the densities for two distinct values of $c$ is strictly monotone in $u$. Its averages, weighted by the denominator density, over two ordered intervals cannot agree. Thus each pair of gaps ties for at most one $c$, and a single $c$ outside a finite set works for every comparison in this family.
+
+\paragraph{Mixed determinant variation.}
+Write $V$ for $V(|y|)$ in the following calculation. With $z=c^2M^2$ the differential equation is
+\[
+ -(pU_y)' + q_zU=0,\qquad
+ p=(V\rho)^{-1},\qquad q_z=(M^2V+z)\rho .
+\]
+The Hilbert space measure is $\rho\,dy$. Let $P$ and $Q$ be the odd extensions of the sums $\sum \sigma_j H_j$ over the fixed and switched indices, respectively. Interpolate by $\rho=1+sP+tQ$ for $(s,t)\in[-1,1]^2$. This is uniformly positive. Its intermediate members need only define the differential equations in the proof.
+
+Use the positive left and right endpoint solutions $U_-,U_+$ and set
+\[
+ {\cal W}_z=p(U_-'U_+-U_-U_+'),\qquad
+ G_z(y,w)=\frac{U_-(y)U_+(w)}{{\cal W}_z}\quad (y<w).
+\]
+The Green kernel is integrated against $\rho(w)\,dw$ for the metric resolvent. For a direct determinant argument, take common Dirichlet truncations with endpoint fluxes $+1,-1$. On each truncation the Lagrange identity gives $\partial_z\log {\cal W}_z=\int G_z(y,y)\rho(y)\,dy$, so the normalized determinant there is $\log({\cal W}_z/{\cal W}_0)$. On exhaustion, the Dirichlet kernels increase to the endpoint Green kernel and their diagonals are bounded by the whole-interval zero-energy value $1/(2M)$. Integrating in $z$ gives convergence of the normalized determinants to the spectral determinant on the full interval.
+
+Use $\tau$ defined by $d\tau=V\rho\,dy$, and define
+\[
+ a_-=\frac{\partial_\tau U_-}{U_-},\qquad
+ a_+=-\frac{\partial_\tau U_+}{U_+},\qquad
+ F_\pm(y)=M^2V(y)+z-V(y)a_\pm(y)^2 .
+\]
+The disjoint mixed derivative of $\log{\cal W}_z$ equals the negative integral of $P(y)Q(w)$ times the following symmetric kernel, written for $y<w$,
+\[
+                 G_z(y,w)^2\,F_-(y)F_+(w).
+\]
+Indeed, for a perturbation $\delta\rho$ the potential insertion is $(M^2V+z)\delta\rho$ and the kinetic form insertion is $-(V\rho^2)^{-1}\delta\rho\,U_y\overline{U_y}$. Differentiating the Wronskian once gives their bilinear pairing between $U_-$ and $U_+$ divided by $\mathcal{W}_z$. A second disjoint variation inserts the negative Green-resolvent product. Factorizing $G_z$ for $y<w$ gives the displayed factors, since $U_y=V\rho\,\partial_\tau U$. The local term $\partial_s\partial_t p$ vanishes as $PQ=0$. On Dirichlet exhaustion one may first integrate the mixed derivative over the parameter square. On the compact separated supports the kernels and their required spatial derivatives converge by the homogeneous ODE in each variable. The common exterior coefficients give uniform bounds over the parameter square. At $z=0$ the whole-line solutions in $\tau$ are proportional to $\exp(\pm M\tau)$, so both $F_\pm$ vanish identically. The same mixed kernel consequently applies to the normalized determinant.
+
+\paragraph{First surviving variation.}
+Set $h=(1+c^2/V)^{1/2}$. In the $\tau$ coordinate the equation is $-\partial_\tau^2 U+M^2h^2U=0$. Primes in this paragraph denote $\tau$ derivatives. One has uniformly
+\[
+ a_-=Mh-\frac{h'}{2h}+O(M^{-1}),\qquad
+ a_+=Mh+\frac{h'}{2h}+O(M^{-1}).
+\]
+For example $a_-'+a_-^2=M^2h^2$ and $a_-\ge M$ by comparison with the constant potential $M^2$. Substituting $A=Mh-h'/(2h)$ gives residual $A'+A^2-M^2h^2=O(1)$. The difference solves a first order equation with damping $a_-+A\ge 2M-O(1)$ and vanishes at the left endpoint at infinity. Integrating gives the stated $O(M^{-1})$. Reversing $\tau$ proves the other expansion. The functions $h,h',h''$ are uniformly bounded over the parameter square, including the common tails where $1/V$ tends smoothly to zero. On the support compacta, therefore,
+\[
+ F_-= M V h'+O(1),\qquad F_+=- M V h'+O(1).
+\]
+There $|h'|$ is uniformly bounded below because $V'(u)>0$, $c>0$, and the compacta avoid $u=0,1$. Its sign is negative in the north, positive in the south. For a same-hemisphere pair the product of the two factors is consequently negative in either hemisphere and its absolute value is comparable to $M^2$. This first derivative of the optical index supplies the signal after cancellation of the order-$M^2$ term at each insertion.
+
+\paragraph{Isolation of the shortest gap.}
+For $y<w$ the exact formula
+\[
+ G_z(y,w)=\frac{\exp(-\int_{\tau(y)}^{\tau(w)} a_-(r)\,dr)}
+                  {a_-(w)+a_+(w)}
+\]
+gives two-sided compact bounds by constant multiples of
+\[
+ M^{-1}\exp\!\left(-M\int_y^w\sqrt{V(r)^2+c^2V(r)}\,\rho(r)\,dr\right).
+\]
+On every gap $\rho=1$, so its optical length is fixed across the interpolation. The same-hemisphere pair facing the shortest boundary gap has constant sign and logarithmic rate $d_c(I)$ in each hemisphere. For the lower bound, choose two small closed pieces with positive $H_j,H_{j+1}$ arbitrarily close to the facing edges. The excess path length on these pieces can be made uniformly smaller than any prescribed positive number. For the upper bound the full gap must be crossed. The two reflected contributions have the same sign since both odd factors reverse. Every other competing pair traverses a longer boundary gap or traverses a boundary gap with additional uniformly positive length, including the paths crossing $0$. Finiteness gives a strict margin. Integrating the mixed derivative over the parameter square yields twice the corner difference by reflection, proving the limit.
+
+\paragraph{Finite-order zeros inside a band.}
+The assertion about the full data class also holds when each separated active band contains finitely many interior zeros of a smooth reference $b'$, all of finite order, and has a fixed nonzero sign adjacent to each of its two edges. Here an active band is a closed interval on which the reference is supported, with no open zero subinterval in its interior. At a zero of order $k$, switching the relative sign would give opposite one-sided values for the $k$th derivative. Thus every smooth assignment still differs from the reference by a single sign per band. In the mixed integral, restrict the winning pair to fixed, sufficiently small edge neighborhoods. Its product has a constant sign there. The rest of that pair has a uniformly positive excess optical length, just as the other competitors do. This proves the same rate and uniqueness. In this variant a band may have zero integral, which permits independent flips compatible with a centered minimum.
+
+For a centered example in the one-signed version, take \(V(u)=(1-u^2)^{-1}\)
+and four separated nonnegative \(H_j\) with the same positive integral.
+The assignments \((+,+,-,-)\) and \((+,-,+,-)\) both have \(b(0)=0\)
+and differ up to reflection. A sufficiently small common scale preserves
+strictly positive curvature by smooth dependence on the compact perturbations.
+This is a class specified entirely by inverse-branch data.
+
+The open gaps and the lower bound for $|V'|$ on the active compacta are substantive here. Adjacent components touching at a flat zero can have several zero-length boundary gaps. The theorem leaves this situation and accumulating components open.
+
+\Needspace{7\baselineskip}\section{An edge support theorem for sign-changing bumps}
+
+\paragraph{Two signed bumps.}
+Let $e_0$ be an even positive sphere background. Let $\alpha,\beta$ be two nonzero real smooth bumps, extended by zero from disjoint compact subsets of $(0,1)$. Absorb the amplitudes into the functions, set $b=\sup\operatorname{supp}\alpha<d=\inf\operatorname{supp}\beta$, and assume that every placement is positive. With $f^\#(x)=f(-x)$ compare
+\[
+ v_1=e_0+\alpha+\beta,\qquad v_2=e_0+\alpha+\beta^\#,\qquad
+ J_M(v)=\operatorname{Tr}(L_M(v)^{-2}).
+\]
+Then $J_M(v_1)\ne J_M(v_2)$ for arbitrarily large integer $M$. This includes bumps changing sign infinitely often at their facing edges.
+
+To prove it, write $e=e_0+(\alpha+\alpha^\#+\beta+\beta^\#)/2$ for the even part and put
+\[
+ E(x,y)=\int_x^y e(s)\,ds,\qquad
+ g=E(b,d),\qquad U(x)=\frac12\int_{|x|}^{b}\alpha(s)\,ds,\qquad
+ B(y)=\frac12\int_d^y\beta(s)\,ds
+\]
+for $-b<x<b$, $d<y<1$. At $t=2M$, the exact zero-energy kernel gives
+\[
+ J_M(v_1)-J_M(v_2)=\frac{2}{M^2} e^{-tg} F(t) H(t),
+\]
+\[
+ F(t)=\int_{-b}^{b} e^{-tE(x,b)}\sinh(tU(x))\,dx,\qquad
+ H(t)=\int_d^1 e^{-tE(d,y)}\sinh(tB(y))\,dy .
+\]
+Indeed $2M^2J_M(v)=\int_{x<y}\exp(-t\int_x^y v)\,dx\,dy$. Pairing each interval with its reflection replaces the signed exponential by a hyperbolic cosine. The difference of the two cosines is twice the product of the two sines. Where both odd integrals are nonzero one reflected representative has $-b<x<b$ and $d<y<1$. The even optical length then splits as $E(x,b)+g+E(d,y)$. These algebraic identities hold for real signs.
+
+Set $\phi_\pm(x)=E(x,b)\pm U(x)$ and $\psi_\pm(y)=E(d,y)\pm B(y)$. Define signed measures
+\[
+ \mu=\tfrac12\big((\phi_-)_*dx-(\phi_+)_*dx\big),\qquad
+ \nu=\tfrac12\big((\psi_-)_*dy-(\psi_+)_*dy\big)
+\]
+on $[0,\infty)$, with Lebesgue measure restricted to the corresponding integration intervals. Their Laplace transforms are $F,H$. Each $\phi_\pm$ is strictly decreasing to $0$ at $b$, and each $\psi_\pm$ is strictly increasing from $0$ at $d$. Indeed the absolute derivatives are positive profile values for the two local placements. These changes of variables give integrable densities for $\mu,\nu$ and no atom at $0$. Both signed supports have infimum $0$. For example, if $\mu$ vanished on $(0,\eta)$, then for small $r>0$ the lengths $b-\phi_-^{-1}(r)$ and $b-\phi_+^{-1}(r)$ would agree. The two inverses, and hence the two maps, would coincide near $b$. This would give $U=0$ and $\alpha=0$ there, contradicting the definition of $b$. The argument using the inverses of $\psi_\pm$ at $d$ proves the assertion for $\nu$.
+
+The Titchmarsh convolution theorem \cite{titchmarsh} gives
+\[
+ \inf\operatorname{supp}(\mu*\nu)
+ =\inf\operatorname{supp}\mu+\inf\operatorname{supp}\nu=0 .
+\]
+The densities may be truncated to compact intervals near zero, since the convolution near zero depends only on these restrictions. The resulting functions satisfy the integrability hypothesis of the theorem.
+
+Thus $M^2(J_M(v_1)-J_M(v_2))/2$ samples the Laplace transform of a finite signed measure with left support endpoint $g$. If all sufficiently high integer samples vanished, its pushforward under $r\mapsto q=e^{-2r}$ would have all sufficiently high moments zero. After multiplication by $q^{M_0}$, all moments would vanish. Polynomial density and the absence of an atom at $q=0$ would force the original measure to vanish, a contradiction.
+
+\paragraph{A unique Mercator boundary gap in a finite signed family.}
+Let $v_\omega$ be the placements of finitely many fixed real bumps on $e_0$, indexed by sign vectors $\omega$. Assume all placements are positive and their northern support intervals have disjoint closures inside $(0,1)$. Let $\lambda_\omega$ be the pushforward of $dx\,dy$ on $-1<x<y<1$ under the Mercator length $\int_x^y v_\omega$. Its Laplace transform at $2M$ is $2M^2J_M(v_\omega)$. For a set of indices $S$ put
+\[
+ \lambda_S=2^{-N}\sum_{\omega}\Big(\prod_{j\in S}\omega_j\Big)\lambda_\omega .
+\]
+Reflection gives $\lambda_S=0$ for odd $|S|$. For a comparison of $\sigma,\gamma$, the measures in $\lambda_\sigma-\lambda_\gamma$ have nonzero coefficients only if $S$ meets both the fixed and switched groups. In particular the extreme indices of such an $S$ span a boundary gap.
+
+Suppose the shortest boundary gap in the $e_0\,dx$ coordinate is unique, has length $g$, and separates supports $i$ and $i+1$. For any interval $[x,y]$ the sign average defining $\lambda_S$ cancels, even against an arbitrary test function of lag, when the integral of any active odd bump over $[x,y]$ is zero. If all are nonzero, the range between $|x|$ and $|y|$ meets all the active bump ranges: the primitive of each odd bump is even and constant off its northern range as a function of $|x|$. Such an interval crosses a whole boundary gap. A nonadjacent pair of extreme indices crosses one with additional positive length. Any path crossing the equator adds positive length as the supports stay away from zero. Uniformity follows from finiteness and a common positive lower bound for all placement densities.
+
+Consequently, on some lag neighborhood $[g,g+\eta)$ only $S=\{i,i+1\}$ contributes. The endpoints of contributing paths lie in small one-sided neighborhoods of the two facing edges in the same hemisphere. To see this, first choose such neighborhoods avoiding all other supports. Excluding either costs a fixed positive extra length on any path whose two active integrals are nonzero. Then choose $\eta$ below all these margins and below the margin to other boundary gaps. On the resulting northern rectangle the sign average factors into the two local signed pushforwards above because the four lengths have the form $\phi_\pm(x)+g+\psi_\pm(y)$. The restricted pushforwards have the same left support endpoints as in the two-bump proof. The southern rectangle gives the identical measure by reflection, because both sign characters reverse. Thus the germ of $\lambda_\sigma-\lambda_\gamma$ is a nonzero multiple of this convolution translated by $g$. Titchmarsh and the integer moment argument again prove separation at arbitrarily high weights. Tied Mercator gaps can contribute several convolutions with the same support endpoint. Whether their sum vanishes requires a further comparison.
+
+\Needspace{7\baselineskip}\section{Arbitrary signs at the support edges}
+
+\paragraph{Theorem.}
+In the finite fixed-bump family, allow each nonzero bump to be any real
+smooth function, including one with infinitely many sign changes near its
+support edges. Keep the positivity of the profiles, the separated support
+hulls, and the smooth symmetric background of the preceding finite-configuration
+theorem. For a comparison with a unique shortest boundary gap of length
+\(d=d_c(I)\) on a fixed ray \(c>0\), let
+\(\delta F_M=F_M(v_\sigma,c^2M^2)-F_M(v_\gamma,c^2M^2)\). Then
+\[
+ \limsup_{\substack{M\to\infty\\M\in{\mathbb N}}}
+       |\delta F_M|^{1/M}=e^{-2d}.
+\]
+In particular every labelled high-weight tail distinguishes the placements,
+up to simultaneous reflection, on a strictly increasing background.
+The root limsup corresponds to a liminf of
+\(-\log|\delta F_M|/(2M)\), with value \(+\infty\) at a zero of the
+contrast. The fixed-sign hypotheses in the previous argument gave a
+pointwise logarithmic limit and eventual separation at each weight.
+Here \(d>0\) and \(e^{-2d}>0\), so the asserted limsup guarantees
+separation on an unbounded subsequence of integer weights, even with
+oscillation all the way to an edge.
+
+\paragraph{Isolating one pair by finite differences.}
+Fix the ray and abbreviate its normalized determinant by \(F\). For a
+set \(S\) of bumps at specified physical positions define
+\[
+ \alpha_S=\sum_{T\subset S}(-1)^{|S|-|T|}
+             F\Big(e_0+\sum_{j\in T}\beta_j^{\rm placed}\Big).
+\]
+For a set \(J\) of underlying indices write \(\sigma(J)\) for their
+positions in placement \(\sigma\). Finite inversion gives
+\(\delta F_M=\sum_J(\alpha_{\sigma(J)}-\alpha_{\gamma(J)})\).
+If every index in \(J\) stays fixed, the corresponding summand is
+zero. If every index switches, it is zero by reflection in the even
+background. Every remaining \(J\) contains both kinds of indices.
+
+In such a placement \(S\), take the leftmost and rightmost physical
+support hulls. Toggle any subset of the intervening sites, leaving
+those chosen sites fixed. The two-site finite difference at the
+extreme sites is the integral over \([0,1]^2\) of their disjoint
+mixed Hessian. The determinant Hessian identity applies to arbitrary
+disjoint compact directions; oddness was used only when identifying
+the four reflection-related corners earlier. The uniform upper bound
+for \(D_M\) therefore gives a bound by \(CM^2\exp(-2M d_{\rm span})\),
+where \(d_{\rm span}\) is any uniform lower bound on the optical
+distance between these extreme supports throughout the toggles and
+interpolation. Taking the remaining finite differences changes the
+constant. All intermediate profiles are positive by disjointness and
+the positivity of both endpoint choices at each site.
+
+The span of any mixed \(J\) traverses a boundary gap between its
+radially innermost and outermost indices, even when it crosses the
+equator. If \(|J|\geq3\), it also traverses a further interval of
+positive length, or the traversed boundary gap is longer than \(d\).
+Indeed the two indices of the shortest gap are consecutive and
+no other support can lie inside that gap. For \(|J|=2\), equality
+at the minimum is possible only for those two indices and only in
+the same hemisphere. Their relative placement changes, so exactly
+one of the two configurations has this same-hemisphere pair.
+Every interpolating profile coincides with \(e_0\) on the gaps, and
+the minimum optical density on the compact support hull is uniformly
+positive. Finiteness gives some \(\eta>0\) such that
+\[
+ \delta F_M=\pm\alpha_{\{L,R\}}+O(M^2e^{-2M(d+\eta)}).
+\]
+Here \(L,R\) are the two actual adjacent bumps on the otherwise
+unperturbed background, reflected together into the north if necessary.
+If there are no additional terms, the remainder is zero.
+
+\paragraph{Exact factorization at a point inside the gap.}
+Choose \(x_*\) strictly inside this gap. For \(i,j\in\{0,1\}\), put
+the left bump in state \(i\) and the right bump in state \(j\), with
+0 denoting absence. Let \(r_i\) be the positive flux logarithmic
+derivative \(v^{-1}U_-'/U_-\) at \(x_*\) for the left-regular solution
+in state \(i\), and \(s_j=-v^{-1}U_+' /U_+\) its right-hand counterpart.
+The derivatives here use \(x\), and the shift is \(z=c^2M^2\).
+Then
+\begin{align*}
+ \alpha_{\{L,R\}}
+   &=\log\frac{(r_1+s_1)(r_0+s_0)}
+                      {(r_1+s_0)(r_0+s_1)}\\
+   &=\log\left(1-
+       \frac{(r_1-r_0)(s_1-s_0)}{(r_1+s_0)(r_0+s_1)}\right).
+\end{align*}
+To verify the normalization, exhaust the area interval by common
+Dirichlet truncations. On a truncation take the two endpoint solutions
+with unit inward flux there. With \(p=1/v\), the positive Wronskian is
+\(W_z=p(U_-'U_+-U_-U_+')\). Differentiating the equation in \(z\)
+and integrating the Lagrange identity gives
+\(\partial_z\log W_z=\int G_z(x,x)\,dx\). The truncated spectral
+determinant is thus \(\log(W_z/W_0)\).
+At the cut \(W_z=U_-(x_*)U_+(x_*)(r_i+s_j)\). The two separate
+solution values cancel in the finite difference. The Dirichlet
+Green kernels increase under exhaustion to the regular kernel and
+are bounded on the diagonal, for every \(z\geq0\), by \(1/(2M)\).
+Integration in \(x,z\) gives convergence of the four normalized
+determinants. The half-interval Dirichlet-to-Neumann values converge
+to the regular ones by the one-dimensional limit-point construction
+(equivalently, by monotone Dirichlet exhaustion of the half-interval
+energy with cut value 1). At shift zero every limiting positive
+flux logarithmic derivative equals \(M\) by the explicit Mercator
+solutions. Hence the zero-shift cross ratio is exactly one in the
+limit, proving the formula. Each denominator factor is comparable
+to \(M\) by the Riccati bounds.
+
+\paragraph{Local inverse spectral theory at the two edges.}
+On each half-line starting from the cut use outward optical distance
+\(t\), with \(dt=a\,|d\tau|\), \(d\tau=v\,dx\), and
+\(a=(1+c^2/v)^{1/2}\). For \(\psi=\sqrt a\,U\) the fixed-ray equation
+is
+\[
+ -\psi''+q\psi=-M^2\psi,\qquad q=(\sqrt a\,)''/\sqrt a ,
+\]
+where primes now denote \(t\) derivatives. The regular solution at the
+pole is the square-integrable solution at infinity. The smooth pole
+expansion gives exponential decay of \(1/v\) and its first two
+optical derivatives. Thus \(q\in C^\infty([0,\infty))\cap L^1(0,\infty)\)
+and \(q(t)\) decays exponentially at infinity. In particular \(q\) is
+bounded, so the Dirichlet half-line realization
+\(H_q=-\partial_t^2+q\) is bounded below and
+\(-M^2<\inf\sigma(H_q)\) for every sufficiently large \(M\). This
+places the Weyl parameter below the spectrum, as required for the
+half-line representation used below. At the cut all
+states agree in a neighborhood. Consequently the difference of
+the two positive flux logarithmic derivatives on each side is
+\(-a(0)\) times the difference of the two Weyl values
+\(m_q(-M^2)=\psi'(0)/\psi(0)\).
+
+Let \(\ell_L,\ell_R\) denote the optical distances from the cut to
+the two facing edges, so \(\ell_L+\ell_R=d\).
+On either half-line the two potentials agree on \([0,\ell]\), where
+\(\ell\) denotes the corresponding edge distance. Agreement on a
+longer initial interval is impossible. Indeed equal \(q\) and the
+common initial Cauchy data for \(\sqrt a\) recover equal \(a\) by
+the displayed linear equation. Then \(v=c^2/(a^2-1)\) is recovered
+and \(|dx/dt|=1/(av)\) recovers the physical coordinate with its
+given orientation and cut value. Agreement beyond the edge would
+force the bump to vanish on an interval just inside its actual
+support edge.
+
+Simon's half-line representation and local equivalence of the potential
+and its \(A\)-function \cite[Theorems~1.4, 1.5 and 2.1]{simon} give
+\[
+ m_q(-M^2)=-M-\int_0^\infty A_q(t)e^{-2Mt}\,dt
+\]
+for sufficiently large real \(M\), with absolute convergence.
+The left endpoint of the essential support of
+\(A_{q_1}-A_{q_0}\) on each side is exactly \(\ell\).
+Thus the product \((r_1-r_0)(s_1-s_0)\) is a nonzero constant times
+the Laplace transform at \(2M\) of the convolution of these two
+real differences. Its left support endpoint is \(d\), by Titchmarsh's
+convolution theorem \cite{titchmarsh}.
+The theorem applies after a common exponential damping that makes
+both factors integrable and preserves their support endpoints.
+
+\paragraph{Integer sampling.}
+For completeness, if a nonzero real \(f\) on \([0,\infty)\) has
+\(e^{-2Nt}f(t)\in L^1\) for some positive integer \(N\), and its
+left essential support endpoint is \(d\), then
+\[
+ \limsup_{n\to\infty}
+ \left|\int_0^\infty e^{-2nt}f(t)\,dt\right|^{1/n}=e^{-2d}.
+\]
+Push \(e^{-2Nt}f(t)\,dt\) forward under \(t\mapsto X=e^{-2t}\)
+to a finite real signed measure \(\mu\), whose right support
+endpoint is \(R=e^{-2d}\). Its moments \(m_j=\int X^j\,d\mu\)
+give the integrals at \(n=N+j\). The root upper bound is \(R\).
+If their root limsup were smaller than \(r<R\), the series
+\(\sum_{j\geq0}m_j z^{-j-1}\) would extend the Cauchy transform
+\(\int (z-X)^{-1}\,d\mu(X)\) holomorphically to \(|z|>r\).
+This continuation is real on the positive real interval \(z>r\).
+Stieltjes inversion, or testing its imaginary part against smooth
+functions using the Poisson kernel, gives \(\mu=0\) on \((r,\infty)\),
+contrary to its support endpoint. The finite shift of the indices
+preserves the root limsup.
+
+Applying this fact to the convolution gives root limsup \(e^{-2d}\)
+for the product of impedance differences at integer \(M\).
+Division by the denominator, comparable to \(M^2\), preserves it.
+Since \(d>0\), taking the logarithm in the exact cross ratio
+also preserves the root limsup by \(\log(1-t)=-t+O(t^2)\).
+The strictly faster remainder in the finite-difference expansion
+preserves the same value for \(\delta F_M\). This proves the theorem.
+
+\Needspace{7\baselineskip}\section{What the invariant sector alone determines}
+
+\paragraph{Generic rigidity in amplitude space.}
+For fixed nonnegative shapes \(\beta_i\) at separated northern positions,
+there is a proper real algebraic subset of the amplitude space outside
+which the single number \(T_2=\operatorname{Tr}' L_0^{-2}\)
+determines every placement up to reflection. Latitude gaps may tie.
+Indeed, for amplitudes \(a_i>0\), put
+\[
+ C_{ij}=\int_0^1\!\!\int_0^1 \beta_i(x)\beta_j(y)
+          \min(x,y)(1-\max(x,y))^2\,dx\,dy .
+\]
+Every \(C_{ij}>0\). Proposition~3.1 of \cite{original} gives, for a
+pair of placements, the difference polynomial
+\[
+ T_2(v_\sigma)-T_2(v_\gamma)=
+ \sum_{i<j} a_i a_j
+    (\sigma_i\sigma_j-\gamma_i\gamma_j) C_{ij}.
+\]
+If \(\gamma\ne\pm\sigma\), at least one pair product differs.
+Distinct pairs give distinct monomials, so this polynomial is nonzero.
+The product over all inequivalent comparisons is a nonzero polynomial.
+Its nonvanishing set is open and dense in every open admissible amplitude
+region and has full Lebesgue measure there.
+This argument also works for bumps of either fixed sign, since every
+off-diagonal coefficient is then still nonzero.
+
+\paragraph{An edge condition that resolves a latitude tie in the zero sector.}
+Suppose the shortest latitude boundary gaps tie, and the relevant bumps
+are nonnegative. On the support side of each facing edge let \(u\) be
+distance to the edge in the background coordinate \(d\xi=\sqrt{e_0}\,dx\).
+Assume the shape \(b\) is positive for all sufficiently small \(u>0\)
+and, for the same \(p>0\) at these edges, satisfies
+\[
+ \log b(u)=-A u^{-p}+o(u^{-p}),\qquad A>0.
+\]
+For a shortest gap \(I\) with edge constants \(A_L,A_R\), its
+unsigned contribution \(E_I\) to the zero-sector mixed determinant has
+the refinement
+\begin{align*}
+ -\log E_I(\kappa)&=2\kappa d_I+
+ C_I\kappa^{p/(p+1)}+o(\kappa^{p/(p+1)}),\\
+ C_I&=(p+1)(2/p)^{p/(p+1)}
+      \big(A_L^{1/(p+1)}+A_R^{1/(p+1)}\big).
+\end{align*}
+Thus a unique smallest \(C_I\) within the latitude
+tie distinguishes the zero-sector spectra. Positive multiplicative
+amplitudes do not change the constants \(A_L,A_R\).
+
+To prove the formula, discard the complement of small fixed facing
+collars using the positive excess in latitude length. If \(u,w\) are the
+two inward distances, the added optical length on the collars lies
+between \((1-\epsilon)(u+w)\) and \((1+\epsilon)(u+w)\), uniformly over
+the interpolation square for sufficiently small collars. This follows
+from continuity and \(v=e_0\) at the two edges. The Green prefactors
+in (O4) are bounded between positive constants times \(\kappa^2\),
+and both area Jacobians are bounded above and below. Bound each bump
+above and below by \(\exp[-(A\mp\epsilon)u^{-p}]\). The resulting products
+give two one-dimensional Laplace integrals, one for each edge. Rescale
+\(u=\kappa^{-1/(p+1)}t\) and minimize \(A t^{-p}+2t\).
+The minimum is \((p+1)(2/p)^{p/(p+1)}A^{1/(p+1)}\).
+Restricting to a neighborhood of the minimizer gives a lower bound,
+and coercivity at both ends gives the matching upper bound on the
+logarithmic scale. Apply this to the perturbed constants and let
+\(\epsilon\downarrow0\). The reflected copy has the same edge constants
+and sign. This condition uses more information than smooth flatness alone.
+
+\paragraph{The exact isospectrality question.}
+For \(\lambda>0\), the flux of a regular solution to \(L_0u=\lambda u\)
+satisfies
+\[
+ w=v^{-1}u',\qquad -w''=\lambda v w,\qquad w(-1)=w(1)=0 .
+\]
+Conversely \(u=-w'/\lambda\) recovers the positive-eigenvalue solution.
+Thus the data in this question are one Dirichlet string spectrum.
+The spectral measure contains norming constants as well as eigenvalues.
+Inverse theory for singular trace-class strings using that measure or
+three spectra is developed by Eckhardt~\cite{eck}. A change in norming
+constants would have to preserve, simultaneously, the endpoint pole
+coefficients, smoothness, the width and absolute midpoint derivative,
+and the curvature and monotonicity conditions. The one-spectrum
+freedom supplies no construction satisfying all these conditions.
+Conversely the polynomial argument proves generic rigidity and leaves
+its exceptional locus to be investigated. The finite cutoff in
+\cite[Theorem~7.1]{original} and the varying-family examples in
+\cite[Theorem~6.2]{original}
+do not settle this exceptional locus. Neither an exactly isospectral
+example nor universal zero-sector uniqueness in every finite family
+follows from the results here.
+
+\Needspace{7\baselineskip}\section{Scope of the inverse result}
+
+The ray theorem gives a finite-family result for exact weight-labelled
+spectra. The signal can be exponentially small in \(M\); agreement of
+all coefficients of a local semiclassical expansion is compatible with
+the separation just proved. All integrated local heat coefficients of
+the two additive swap arrangements also agree. Outside the switched
+regions the metrics coincide, and the integrals on switched northern
+and southern regions are interchanged by reflection. The ordinary
+determinant retains information beyond those coefficients.
+
+One extension to infinitely many additive swaps is conditional.
+Suppose the odd perturbations are smooth and compactly supported, their
+supports are separated, two winning same-hemisphere facing rectangles
+are of fixed sign, and the entire remaining opposite-sign region has
+action at least \(d+\delta\) for some \(\delta>0\), uniformly over the
+interpolation. If all pairs have action at least \(d\) and the
+winning rectangles have positive subrectangles approaching that action,
+the integral proof goes through directly. One integrates the absolute
+values of the bounded perturbations instead of counting rectangles.
+For an accumulating sequence the infimum of boundary lengths can be
+zero or unattained. Even finitely many switching interfaces can touch
+at points, producing zero-length gaps for every ray. If signs oscillate
+up to a winning support edge, the positive lower rectangle for the
+absolute mass no longer bounds the signed mass. For finite families
+the Weyl-function argument recovers high-weight tail uniqueness on
+a ray, with a root limsup even in this oscillatory case. A full
+logarithmic limit at every integer weight remains a stronger claim.
+
+Appendix~\ref{app:inverse} proves that the labelled high-weight spectra
+of a smooth single well recover the two positive inverse slopes as an
+unordered pair at every regular height. It gives a direct determinant
+proof of the inverse data used in the branch-labelling discussion of
+Dryden, Macedo and Sena-Dias~\cite[final paragraph of Section~3]{dms}. Across flat agreement
+of these slopes, the labels can be continued in different smooth ways.
+Section~2 of \cite{original} exhibits this ambiguity for the local
+invariants. Under the finite-band hypotheses, Section~5 determines
+the labels up to a common reversal. A general solution for the smooth
+class would also have to
+distinguish all admissible touching or accumulating switches. The
+ordinary-spectrum argument for two co-minimizing gaps supplies two
+independent constraints. With three or more positively weighted
+terms of competing signs these constraints alone need not force a
+contradiction.
+
+\clearpage
+\appendix
+\Needspace{7\baselineskip}\section{Recovering the unordered inverse slopes}\label{app:inverse}
+
+\paragraph{Proposition.}
+Let \(v>0\) be a smooth sphere profile in the area coordinate, with the
+pole normalization in the introduction, one nondegenerate interior
+minimum \(s_*=\min v\), and \(v'\ne0\) on each open side of the minimum.
+For \(s>s_*\), let \(x_-(s)<x_+(s)\) be the two points at height \(s\).
+The spectra of the individual \(L_m\) for all sufficiently large labelled
+integer weights \(M=|m|\) determine \(s_*\) and the unordered pair
+\[
+ \{p_+(s),p_-(s)\}=\{x_+'(s),-x_-'(s)\}\qquad (s>s_*).
+\]
+In particular they determine the width \(W=x_+-x_-\) and the absolute
+derivative of the midpoint \(a=(x_++x_-)/2\). The proof uses the full
+spectrum within each available sector to evaluate its determinant for
+a range of shifts. An unbounded sequence of labelled weights already
+suffices for this recovery.
+
+\paragraph{Two coefficients of a spectral function.}
+Normalize \(\tau\) by \(d\tau=v\,dx\) and set \(w(\tau)=1/v(x(\tau))\).
+Thus \(dx=w\,d\tau\) and \(\int_{\mathbb R}w\,d\tau=2\).
+For the squared ray parameter \(\eta\geq0\), write
+\[
+ \alpha=(1+\eta w)^{1/2},\qquad
+ {\cal F}_M(\eta)=\log\det(I+\eta M^2 L_m^{-1})
+     =\sum_j\log(1+\eta M^2/\lambda_{m,j}).
+\]
+The following two terms, including their relative normalization, will
+be used:
+\begin{align}
+ {\cal F}_M(\eta)&=M A(\eta)+M^{-1}B(\eta)+O(M^{-2}), \tag{A1}\\
+ A(\eta)&=\int_{\mathbb R}(\alpha-1)\,d\tau,\qquad
+ B(\eta)=\frac18\int_{\mathbb R}\frac{(\alpha')^2}{\alpha^3}\,d\tau
+   =\frac{\eta^2}{32}\int_{\mathbb R}
+          \frac{(w')^2}{(1+\eta w)^{5/2}}\,d\tau . \tag{A2}
+\end{align}
+Primes on \(w,\alpha\) denote \(\tau\)-derivatives. The error in (A1)
+is uniform on every fixed \(0\leq\eta\leq\eta_0<\infty\).
+Consequently \(A(\eta)=\lim {\cal F}_M(\eta)/M\) and
+\(B(\eta)=\lim M({\cal F}_M(\eta)-MA(\eta))\) are both spectral.
+
+For the proof, the positive regular solutions of
+\(-U''+M^2\alpha^2 U=0\) on the Mercator line have inward logarithmic
+slopes \(r_-=U_-'/U_-\) and \(r_+=-U_+'/U_+\), as in Section~2 after
+multiplication by \(M\). They tend to \(M\) at their respective ends
+and are at least \(M\) by comparison. The Wronskian formula gives the
+diagonal of the area-measure resolvent at shift \(\eta M^2\) as
+\((r_-+r_+)^{-1}\). Exact differentiation of the convergent determinant
+therefore gives
+\[
+   \partial_\eta {\cal F}_M=M^2
+      \int_{\mathbb R}\frac{w(\tau)}{r_-(\tau)+r_+(\tau)}\,d\tau .
+   \tag{A3}
+\]
+The pole hypothesis gives \(w=(1-x^2)/(1+(1-x^2)h(x))\) for smooth
+\(h\), and \(\tau=\operatorname{arctanh}x+O(1)\) near both ends.
+Since \(\partial_\tau=w\partial_x\), the function \(w\) and its first
+three \(\tau\)-derivatives decay as \(O(e^{-2|\tau|})\).
+
+Set \(b_1=\alpha''/(4\alpha^2)-3(\alpha')^2/(8\alpha^3)\). The two
+inward Riccati equations give
+\begin{align*}
+ r_-&=M\alpha-\alpha'/(2\alpha)+b_1/M+O(M^{-2}),\\
+ r_+&=M\alpha+\alpha'/(2\alpha)+b_1/M+O(M^{-2}).
+\end{align*}
+Indeed the trial expression \(R\) in the first line satisfies
+\(R'+R^2-M^2\alpha^2=O(M^{-1})\), uniformly on the whole line and
+on the stated \(\eta\)-interval. For \(E=r_--R\), the equation for
+\(E\) has damping \(r_-+R\geq2M-C\) and forcing equal to the negative
+residual. Integrating from \(-\infty\), where \(E\) tends to zero,
+gives the uniform \(O(M^{-2})\) bound. Reversing \(\tau\) proves the
+second line. Substitution in (A3), using \(\int w=2\), yields
+\[
+ \partial_\eta{\cal F}_M=
+ \frac{M}{2}\int\frac{w}{\alpha}\,d\tau
+ -\frac1{2M}\int\frac{w b_1}{\alpha^2}\,d\tau+O(M^{-2}).
+ \tag{A4}
+\]
+The first integral with its factor \(1/2\) equals \(A'(\eta)\).
+To identify the next term, differentiate (A2) under the integral,
+use \(\partial_\eta\alpha=w/(2\alpha)\), and integrate by parts once:
+\[
+ B'(\eta)=\frac18\int
+ \left(-\frac{2\alpha''}{\alpha^3}
+             +\frac{3(\alpha')^2}{\alpha^4}\right)
+       \frac{w}{2\alpha}\,d\tau
+ =-\frac12\int\frac{w b_1}{\alpha^2}\,d\tau .
+\]
+The boundary term vanishes by pole decay. Integrate (A4) from \(0\)
+to \(\eta\), using \({\cal F}_M(0)=A(0)=B(0)=0\). This proves (A1).
+
+\paragraph{Inversion of the two coefficients.}
+Push forward \(w\,d\tau=dx\) and \((w')^2\,d\tau\) under the map
+\(\tau\mapsto t=w(\tau)\), and denote the resulting measures by
+\(\mu\) and \(\nu\). Both are finite and supported in \([0,\max w]\).
+Equations (A1)--(A2) determine the functions
+\[
+ 2A'(\eta)=\int(1+\eta t)^{-1/2}\,d\mu(t),\qquad
+ \frac{32B(\eta)}{\eta^2}=\int(1+\eta t)^{-5/2}\,d\nu(t).
+ \tag{A5}
+\]
+The second expression extends to \(\eta=0\) by continuity. Taylor
+coefficients at zero give every moment, including the mass, since all
+binomial coefficients of both kernels are nonzero. The measures are
+uniquely determined: two candidate profiles have a common compact
+interval containing both supports, and polynomials are dense among its
+continuous functions. The upper support endpoint of \(\mu\) equals
+\(\max w\), since every neighborhood of the minimum of \(v\) has
+positive \(dx\)-measure. Thus \(s_*=1/\sup\operatorname{supp}\mu\).
+Also \(W(s)=\mu([1/s,\max w])\), the area-coordinate length of
+\(\{v\leq s\}\).
+
+Write \(m(t),n(t)\) for the densities of \(\mu,\nu\) on the open
+regular interval \(0<t<1/s_*\). They are smooth there. Each regular
+value has two preimages, at which \( |w'|=|v_x'|/v^3\).
+Changing variables on each branch in \(w\,d\tau\) and \((w')^2d\tau\)
+gives \(m(t)=\sum_{w=t} t/|w'|\) and \(n(t)=\sum_{w=t}|w'|\).
+Hence at every \(s>s_*\),
+\begin{align}
+ S(s)&=\frac{m(1/s)}{s^2}=p_+(s)+p_-(s),&
+ H(s)&=s^3 n(1/s)=\frac1{p_+(s)}+\frac1{p_-(s)}. \tag{A6}
+\end{align}
+Uniqueness of the measures first gives the densities almost everywhere;
+continuity gives (A6) at every regular height. The inverse slopes are
+the positive roots of \(X^2-SX+S/H=0\). It follows that
+\[
+ W'=S,\qquad |a'|=\frac12\sqrt{S^2-4S/H}.
+ \tag{A7}
+\]
+The possible singularity of \(W'\) at the bottom of the well is
+integrable; the distribution formula for \(W\) fixes \(W(s_*)=0\)
+directly. At a repeated root (A7) gives \(a'=0\) and makes no choice
+of which branch continues to either side.
+
+\paragraph{Consequence for Section~5.}
+Suppose two admissible single wells have identical labelled large-weight
+spectra and meet the separated finite-band hypotheses of Section~5.
+The proposition gives the same \(W,|a'|\), hence the same height
+\(V(u)\) at signed half-width magnitude \(u=W/2\), and the same
+\(|b'(u)|=|a'(V(u))|V'(u)\). The finite-branch theorem then forces
+their assignments to agree up to simultaneous reversal. Integrating
+with \(b(1)=0\) fixes the midpoint itself up to that sign. The two
+profiles coincide up to \(x\mapsto-x\). If the minimum is prescribed
+at \(x=0\), both assignments also satisfy \(b(0)=0\).
+
+\section*{Acknowledgment}
+This work was coordinated by nunavipahe60-star and completed in
+collaboration with Claude, Gemini, and Codex.
+
+\begingroup\small
+\begin{thebibliography}{5}
+\bibitem{original} Erina (nunavipahe60-star), \textit{Swap pairs on
+spheres of revolution: what the equivariant spectrum sees}, archived
+in \textit{swap-pairs-spheres}, version 1.0.0, Zenodo (2026).
+\href{https://doi.org/10.5281/zenodo.24531890}{doi:10.5281/zenodo.24531890}.
+\bibitem{dms} E.~B. Dryden, D. Macedo and R. Sena-Dias, Recovering
+\(S^1\)-invariant metrics on \(S^2\) from the equivariant spectrum,
+\textit{Int. Math. Res. Not.} \textbf{2016} (2016), no.~16, 4882--4902.
+\href{https://doi.org/10.1093/imrn/rnv295}{doi:10.1093/imrn/rnv295}.
+\bibitem{eck} J. Eckhardt, Two inverse spectral problems for a class
+of singular Krein strings, \textit{Int. Math. Res. Not.} \textbf{2014}
+(2014), no.~13, 3692--3713.
+\href{https://doi.org/10.1093/imrn/rnt049}{doi:10.1093/imrn/rnt049}.
+\bibitem{simon} B. Simon, A new approach to inverse spectral theory, I.
+Fundamental formalism, \textit{Ann. of Math.} (2) \textbf{150} (1999),
+no.~3, 1029--1057.
+\href{https://doi.org/10.2307/121061}{doi:10.2307/121061}.
+\bibitem{titchmarsh} E.~C. Titchmarsh, The zeros of certain integral
+functions, \textit{Proc. London Math. Soc.} (2) \textbf{25} (1926),
+283--302.
+\href{https://doi.org/10.1112/plms/s2-25.1.283}{doi:10.1112/plms/s2-25.1.283}.
+\end{thebibliography}
+\endgroup
+\end{document}
